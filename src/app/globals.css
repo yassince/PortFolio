@@ -42,6 +42,27 @@ body {
   
 }
 
+@keyframes SlideInLeft {
+  0%{
+    transform: translateX(-100px);
+  }
+  100%{
+    transform: translateX(0px);
+  }
+  
+}
+
+@keyframes SlideInRight {
+  0%{
+    transform: translateX(100px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
+}
+
 .fade-in{
   animation: FadeIn .3s ease-out forwards;
 }
+
+
