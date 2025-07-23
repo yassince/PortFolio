@@ -41,6 +41,24 @@ body {
   }
   
 }
+@keyframes SlideIn {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+  
+}
+@keyframes SlideOut{
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+  
+}
 
 @keyframes SlideInLeft {
   0%{
@@ -64,5 +82,10 @@ body {
 .fade-in{
   animation: FadeIn .3s ease-out forwards;
 }
-
+.slide-in{
+  animation: SlideIn .3s ease-in forwards;
+}
+.slide-out{
+  animation: SlideOut .3s ease-in forwards;
+}
 
