@@ -11,7 +11,7 @@ export default function AboutMe({ }) {
                         <h1 className="text-4xl md:text-6xl min-h-16">
                             Sobre Mi 👋
                         </h1>
-                        <p className="max-w-4xl hover:tracking-wide transition-all duration-150 text-xl">
+                        <p className="max-w-4xl md:hover:tracking-wide transition-all duration-150 text-xl">
                             Soy un desarrollador web, que en este momento es buscando trabajo, me manejo en HTML, CSS, JavaScrip, Node.js, ansible entre otras muchas más tecnologias.
                             Soy una presona apasionada por la programación y me gusta la idea de construir un proyecto innovador desde cero.
                             Me considero una presona motivada, formal, puntual, con la capacidad de aprendizaje rápido.
@@ -21,7 +21,7 @@ export default function AboutMe({ }) {
                             <Link href={'https://es.linkedin.com/in/yassin-charrouf-errynda-73a208374'}>Linkedin</Link>
                         </div>
                     </div>
-                    <div className="Image-presntation h-72 w-72 rounded-[100px] border border-button-header overflow-hidden">
+                    <div className="Image-presentation h-72 w-72 rounded-[100px] border border-button-header overflow-hidden">
                         <Image
                             src={Profile}
                             height={350}
