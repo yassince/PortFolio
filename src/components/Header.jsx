@@ -28,7 +28,7 @@ export default function Header({ }) {
                 <nav className="navigation hidden lg:flex text-xl flex-col w-auto items-center md:flex-row gap-4">
                     <Link href={'#inicio'}>Inicio</Link>
                     <Link href={'#aboutMe'}>Sobre Mi</Link>
-                    <Link href={'#expirience'}>Experiencia</Link>
+                    <Link href={'#experience'}>Experiencia</Link>
                     <Link href={'#proyects'}>Proyectos</Link>
                     <Link href={'#contacMe'}>Contactame</Link>
                 </nav>
@@ -77,7 +77,7 @@ export default function Header({ }) {
                 <nav className={`${open ? 'absolute' : 'hidden'} ${animation} z-20 top-26 p-6 w-full flex flex-col gap-4 lg:hidden min-h-full items-center justify-center`}>
                     <Link href={'#inicio'}>Inicio</Link>
                     <Link href={'#aboutMe'}>Sobre Mi</Link>
-                    <Link href={'#expirience'}>Experiencia</Link>
+                    <Link href={'#experience'}>Experiencia</Link>
                     <Link href={'#proyects'}>Proyectos</Link>
                     <Link href={'#contacMe'}>Contactame</Link>
                 </nav>

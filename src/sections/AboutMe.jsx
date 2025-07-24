@@ -5,7 +5,7 @@ import Link from "@/components/Link";
 export default function AboutMe({ }) {
     return (
         <>
-            <section id="aboutMe" className="presentation h-screen p-6 m-6 flex flex-col gap-10 overflow-hidden justify-center">
+            <section id="aboutMe" className="presentation min-h-screen p-6 m-6 flex flex-col gap-10 overflow-hidden justify-center">
                 <div className="cardInfo flex flex-col lg:flex-row justify-around gap-4 items-center">
                     <div className="Info-presentation gap-6 flex flex-col">
                         <h1 className="text-4xl md:text-6xl min-h-16">
