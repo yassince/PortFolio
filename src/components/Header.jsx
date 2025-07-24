@@ -19,11 +19,9 @@ export default function Header({ }) {
         }
     }
 
-    console.log(open);
-
     return (
         <>
-            <header className="p-6 flex flex-row justify-around items-baseline w-full gap-4 md:gap-2 lg:gap-4 sticky top-0 z-0">
+            <header className="p-6 flex flex-row justify-around items-baseline w-full gap-4 md:gap-2 lg:gap-4 sticky top-0 z-20">
                 <div className="logo font-bold text-4xl text-center w-full p-2 md:w-auto md:text-left lg:text-6xl">
                     Yassin c.e
                 </div>
@@ -76,7 +74,7 @@ export default function Header({ }) {
                         }
                     </AnimatePresence>
                 </button>
-                <nav className={`${open ? 'absolute' : 'hidden'} ${animation} z-[999] top-26 bg-primary-pruple p-6 w-full flex flex-col gap-4 lg:hidden min-h-full items-center justify-center`}>
+                <nav className={`${open ? 'absolute' : 'hidden'} ${animation} z-20 top-26 p-6 w-full flex flex-col gap-4 lg:hidden min-h-full items-center justify-center`}>
                     <Link href={'#inicio'}>Inicio</Link>
                     <Link href={'#aboutMe'}>Sobre Mi</Link>
                     <Link href={'#expirience'}>Experiencia</Link>
