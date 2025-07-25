@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-export default function CardInfo({ title, children, ImageCard }) {
+export default function CardInfo({ title, children, ImageCard, tecnologias }) {
     return (
         <>
             <section className="p-8 bg-third-purple rounded-2xl max-w-96 lg:max-w-[800px] gap-6 flex flex-col items-center overflow-hidden">
@@ -15,6 +15,11 @@ export default function CardInfo({ title, children, ImageCard }) {
                 </div>
                 <h1 className="text-xl md:text-2xl font-bold text-center">{title}</h1>
                 <p className="md:text-xl">{children}</p>
+                <section className="tecnologias flex flex-row p-4 gap-2">
+                    {tecnologias?.map( (item) =>{
+                        return item
+                    })}
+                </section>
             </section>
         </>
     )
