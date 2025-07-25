@@ -6,7 +6,7 @@ export default function Experience({}){
     return(
         <>
             <section id="experience" className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-b from-primary-pruple to-black">
-                <h1 className="text-6xl font-bold mt-32 md:mt-0">Experiencia</h1>
+                <h1 className="text-6xl font-bold mt-32 lg:mt-0">Experiencia</h1>
                 <section className="work grid grid-cols-1 lg:grid-cols-2 gap-40 m-16">
                     <CardInfo
                         title={'Junior Equipo Industrialización'}
