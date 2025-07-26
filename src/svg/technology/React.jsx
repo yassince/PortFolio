@@ -1,7 +1,8 @@
-export default function React({ width, height, fill }) {
-    retrun(
+export default function React({ width, height, fill, className }) {
+    return(
         <>
             <svg
+                className={className}
                 width={width}
                 height={height}
                 viewBox="0 0 64 64"

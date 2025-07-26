@@ -1,7 +1,8 @@
-export default function Node({height, width }) {
+export default function Node({height, width, className }) {
     return (
         <>
             <svg
+                className={className}
                 width={width}
                 height={height}
                 viewBox="-3.8 -1.5 40.921 40.921"
