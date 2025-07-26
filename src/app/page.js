@@ -1,5 +1,5 @@
 'use client'
-import Header from "@/components/Header";
+import Header from "@/sections/Header";
 import AboutMe from "@/sections/AboutMe";
 import ContactMe from "@/sections/ContactMe";
 import Experience from "@/sections/Experience";
