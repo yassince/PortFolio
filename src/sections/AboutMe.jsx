@@ -12,9 +12,7 @@ export default function AboutMe({ }) {
                             Sobre Mi 👋
                         </h1>
                         <p className="max-w-4xl md:hover:tracking-wide transition-all duration-150 text-xl">
-                            Soy un desarrollador web, que en este momento es buscando trabajo, tengo bastante conocimiento en HTML, CSS, JavaScrip, Node.js, ansible entre otras muchas más tecnologias.
-                            Soy una presona apasionada por la programación y me gusta la idea de construir un proyecto innovador desde cero.
-                            Me considero una presona motivada, formal, puntual, con la capacidad de aprendizaje rápido.
+                            Desarrollador web apasionado por crear soluciones innovadoras desde cero. Domino tecnologías como HTML, CSS, JavaScript, Node.js y Ansible, entre muchas otras. Me destaco por ser formal, motivado, puntual y con una gran capacidad de aprendizaje. Estoy en búsqueda de oportunidades profesionales donde pueda seguir creciendo y aportar valor con mi trabajo.
                         </p>
                         <div className="contact flex flex-col md:flex-row justify-around max-w-2xl gap-4 text-center">
                             <Link href={'https://github.com/yassince'}>GitHub</Link>
