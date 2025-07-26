@@ -15,7 +15,7 @@ export default function CardInfo({ title, children, ImageCard, tecnologias }) {
                 </div>
                 <h1 className="text-xl md:text-2xl font-bold text-center">{title}</h1>
                 <p className="md:text-xl">{children}</p>
-                <section className="tecnologias flex flex-row p-4 gap-2">
+                <section className="tecnologias grid grid-cols-2 md:grid-cols-3 p-4 lg:flex lg:flex-row gap-4">
                     {tecnologias?.map( (item) =>{
                         return item
                     })}
