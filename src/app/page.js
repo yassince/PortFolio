@@ -1,6 +1,7 @@
 'use client'
 import Header from "@/components/Header";
 import AboutMe from "@/sections/AboutMe";
+import ContactMe from "@/sections/ContactMe";
 import Experience from "@/sections/Experience";
 import Hero from "@/sections/Hero";
 import Proyects from "@/sections/Proyects";
@@ -15,6 +16,7 @@ export default function Home() {
       <Experience/>
       <Studies/>
       <Proyects/>
+      <ContactMe/>
     </>
   )
 }
