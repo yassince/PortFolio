@@ -7,6 +7,7 @@ import Hero from "@/sections/Hero";
 import Proyects from "@/sections/Proyects";
 import Studies from "@/sections/Studies";
 import Footer from "@/sections/Footer";
+import Skills from "../sections/Skills";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Header/>
       <Hero/>
       <AboutMe/>
+      <Skills/>
       <Experience/>
       <Studies/>
       <Proyects/>
