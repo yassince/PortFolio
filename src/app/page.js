@@ -1,5 +1,4 @@
 'use client'
-import Header from "@/sections/Header";
 import AboutMe from "@/sections/AboutMe";
 import ContactMe from "@/sections/ContactMe";
 import Experience from "@/sections/Experience";
@@ -12,7 +11,6 @@ import Skills from "../sections/Skills";
 export default function Home() {
   return (
     <>
-      <Header/>
       <Hero/>
       <AboutMe/>
       <Skills/>
