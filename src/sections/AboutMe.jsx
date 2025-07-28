@@ -42,13 +42,3 @@ export default function AboutMe({ }) {
         </>
     )
 }
-
-
-/* <div className="cardInfo flex flex-col justify-around gap-4 items-center">
-                    
-                    <div className="Info-presentation gap-6 flex flex-col border-2">
-                        
-                       
-                    </div>
-                </div>
-                 */
