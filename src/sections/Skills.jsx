@@ -42,9 +42,9 @@ const SkillCategory = ({ title, skills }) => (
 
 export default function Skills() {
     return (
-        <section id="skills" className="min-h-screen p-6 m-6 flex flex-col items-center justify-center gap-12">
+        <section id="skills" className="min-h-screen p-6 flex flex-col items-center justify-center gap-12 bg-[url(/Skill.webp)] bg-cover bg-no-repeat text-white">
             <h2 className="text-6xl font-bold text-center">Habilidades y Tecnologías</h2>
-            <div className="w-full max-w-5xl flex flex-col items-center gap-12">
+            <div className="w-full max-w-5xl flex flex-col items-center gap-12 text-xl font-bold">
                 <SkillCategory title="Frontend" skills={SKILLS.Frontend} />
                 <SkillCategory title="Backend" skills={SKILLS.Backend} />
                 <SkillCategory title="DevOps" skills={SKILLS.DevOps} />
