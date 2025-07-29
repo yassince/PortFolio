@@ -11,7 +11,7 @@ export default function Proyects({ }) {
     return (
         <>
             <section id="proyects" className="min-h-screen flex justify-center items-center flex-col gap-8 p-6">
-                <h1 className="text-6xl font-bold">Proyectos</h1>
+                <h1 className="text-6xl font-bold lg:mt-18">Proyectos</h1>
                 <section className="proyects">
                     <a href="https://github.com/yassince/MiFuturo" target="_blank" rel="noreferrer" className="hover:scale-90 transition-transform duration-300">
                         <CardInfo
@@ -32,12 +32,13 @@ export default function Proyects({ }) {
                                 <React
                                     height={'100px'}
                                     width={'100px'}
-                                    fill={'blue'}
+                                    fill={'#61DAFB'}
                                     className={iconsClass}
                                 />,
                                 <Tailwind
                                     height={'100px'}
                                     width={'100px'}
+                                    fill={'#38BDF8'}
                                     className={iconsClass}
                                 />,
                                 <Astro
