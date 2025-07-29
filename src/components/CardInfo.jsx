@@ -13,13 +13,13 @@ export default function CardInfo({ title, children, ImageCard, tecnologias }) {
                         className="rounded-2xl"
                     />
                 </div>
-                <h1 className="text-xl md:text-2xl font-bold text-center text-primary-color-5">{title}</h1>
+                <h1 className="text-xl md:text-4xl font-bold text-center text-primary-color-5">{title}</h1>
                 <p className="md:text-xl text-primary-color-4">{children}</p>
                 <section className={`
                     ${!tecnologias ? 'hidden' : ''} 
                     tecnologias grid grid-cols-2 md:grid-cols-3 p-4 lg:flex lg:flex-row gap-4`
                 }>
-                    {tecnologias?.map( (item) =>{
+                    {tecnologias?.map((item) => {
                         return item
                     })}
                 </section>
