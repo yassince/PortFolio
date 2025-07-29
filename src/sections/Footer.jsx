@@ -22,42 +22,39 @@ export default function Footer({ }) {
     ];
     return (
         <>
-            <footer className="footer bg-primary-pruple p-8 text-white flex gap-2.5 flex-col justify-between">
+            <footer className="footer bg-primary-pruple p-8 text-white flex gap-2.5 flex-col justify-between bg-gradient-to-r from-20% from-primary-color to-85% to-primary-color-4">
                 <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-                    <div className="text-center md:text-left">
+                    <div className="text-right text-xl md:text-3xl lg:text-4xl font-bold">
                         &copy; 2025 Yassin Charrouf Errynda
                     </div>
-                    <div className="flex flex-col gap-4 justify-center items-center">
-                        <h3>Enlace a mis redes sociales</h3>
-                        <div className="links flex flex-row">
-                            <a
-                                href="https://github.com/yassince"
-                                target="_blank"
-                                rel="noreferrer"
-                            >
-                                <GitHub
-                                    height={'50px'}
-                                    width={'50px'}
-                                    fill={'white'}
-                                    className="hover:scale-110 transition-transform duration-300"
-                                />
-                            </a>
-                            <a
-                                href="https://www.linkedin.com/in/yassin-charrouf-errynda-73a208374"
-                                target="_blank"
-                                rel="noreferrer"
-                            >
-                                <Linkedin
-                                    height={'50px'}
-                                    width={'50px'}
-                                    fill={'white'}
-                                    className="hover:scale-110 transition-transform duration-300"
-                                />
-                            </a>
-                        </div>
+                    <div className="flex flex-row gap-4 justify-center items-center md:mr-10">
+                        <a
+                            href="https://github.com/yassince"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <GitHub
+                                height={'50px'}
+                                width={'50px'}
+                                fill={'white'}
+                                className="hover:scale-110 transition-transform duration-300"
+                            />
+                        </a>
+                        <a
+                            href="https://www.linkedin.com/in/yassin-charrouf-errynda-73a208374"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <Linkedin
+                                height={'50px'}
+                                width={'50px'}
+                                fill={'white'}
+                                className="hover:scale-110 transition-transform duration-300"
+                            />
+                        </a>
                     </div>
                 </div>
-                <p className="text-center min-h-8">
+                <p className="text-center min-h-8 text-2xl">
                     <Typewriter
                         words={mensajesDeAgradecimiento}
                         loop={true}
