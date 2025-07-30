@@ -8,10 +8,10 @@ export default function AboutMe({ }) {
     return (
         <>
             <section id="aboutMe" className="min-h-screen p-4 flex flex-col gap-6 overflow-hidden justify-center items-center bg-gradient-to-b from-15% to-100% from-primary-color-3 to-primary-color-4">
-                <h1 className="text-4xl md:text-6xl min-h-16 lg:text-8xl font-bold mb-12">
+                <h1 className="text-4xl md:text-6xl min-h-16 lg:text-8xl font-bold mt-12 md:mt-0">
                     Sobre Mi 👋
                 </h1>
-                <div className="info_me flex flex-col md:flex-row w-full md:justify-around items-center">
+                <div className="info_me flex flex-col md:flex-row w-full md:justify-around items-center pb-6">
                     <div className="presentation flex flex-col max-w-4xl min-w-32 w-full justify-between items-center gap-2 border-2 rounded-2xl shadow-2xl shadow-white p-6 m-6">
                         <p className="text-3xl lg:text-3xl max-w-6xl lg:w-xl p-2 flex flex-col items-center justify-between gap-10">
                             Soy un desarrollador web apasionado por crear soluciones innovadoras desde cero. Me destaco por ser una persona formal, motivada, puntual y con una gran capacidad de aprendizaje. Estoy en búsqueda de oportunidades profesionales donde pueda seguir creciendo y aportar valor con mi trabajo.

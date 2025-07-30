@@ -5,7 +5,7 @@ export default function Studies({ }) {
     return (
         <>
             <section className="min-h-screen flex justify-center items-center flex-col ">
-            <h1 className="text-6xl font-bold text-center mb-28">Estudios</h1>
+            <h1 className="text-6xl font-bold text-center md:mb-28 mt-12 md:mt-0">Estudios</h1>
                 <section className="studies m-6 p-6 flex flex-col w-full lg:flex-row justify-center items-center lg:space-x-10 gap-4">
                     <CardStudies
                         title={'Desarrollo de Aplicaciones Web'}
