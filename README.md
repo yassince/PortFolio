@@ -1,4 +1,4 @@
-# 🌐 Portafolio Personal – Yassince
+# 🌐 Portafolio Personal – Yassin-ce
 
 Este es mi portafolio personal desarrollado con **React**, donde presento mis proyectos, habilidades y experiencia como desarrollador web. El sitio es totalmente responsive y está diseñado para ofrecer una navegación clara, rápida y atractiva, ideal como carta de presentación profesional.
 
