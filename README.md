@@ -14,7 +14,7 @@ Este es mi portafolio personal desarrollado con **React**, donde presento mis pr
 
 - ⚛️ [React](https://reactjs.org/) – Librería principal para la UI
 - 🧼 CSS – Estilos personalizados
-- 🔀 React Router – Navegación entre páginas (si aplica)
+- 🔀 React Router – Navegación entre páginas.
 - 📦 Vite – Para desarrollo local rápido
 
 ---
