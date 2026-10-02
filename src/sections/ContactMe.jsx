@@ -1,13 +1,20 @@
+"use client";
+
 import emailjs from "emailjs-com";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+
+const fieldClass =
+  "rounded-xl border border-white/15 bg-white p-3 text-left text-base text-[#0c111a] outline-none ring-accent placeholder:text-slate-400 focus:ring-2";
 
 export default function ContactMe() {
   const formRef = useRef();
+  const [sending, setSending] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (e.target.companyName.value) return;
+    if (e.target.companyName.value || sending) return;
 
+    setSending(true);
     emailjs
       .sendForm("service_7hzcniw", "template_t7qpxtm", formRef.current, "M4bhQFulnpj1h714I")
       .then(
@@ -18,7 +25,8 @@ export default function ContactMe() {
         () => {
           alert("Hubo un problema al enviar. Prueba de nuevo o escríbeme por LinkedIn.");
         }
-      );
+      )
+      .finally(() => setSending(false));
   };
 
   return (
@@ -34,44 +42,47 @@ export default function ContactMe() {
       <form
         onSubmit={handleSubmit}
         ref={formRef}
-        className="relative flex w-full max-w-xl flex-col gap-4 rounded-2xl border border-white/10 bg-black/50 p-8"
+        className="relative flex w-full max-w-xl flex-col gap-3 rounded-2xl border border-white/10 bg-black/50 p-8"
       >
-        <label className="text-sm font-semibold" htmlFor="name">
+        <label className="text-sm font-semibold" htmlFor="userName">
           Nombre
         </label>
         <input
-          className="rounded-xl border border-white/10 bg-white/90 p-3 text-center text-primary-color-5"
+          className={fieldClass}
           type="text"
           name="userName"
-          id="name"
+          id="userName"
+          autoComplete="name"
           required
         />
-        <label className="text-sm font-semibold" htmlFor="email">
+        <label className="text-sm font-semibold" htmlFor="userEmail">
           Email
         </label>
         <input
-          className="rounded-xl border border-white/10 bg-white/90 p-3 text-center text-primary-color-5"
+          className={fieldClass}
           type="email"
           name="userEmail"
-          id="email"
+          id="userEmail"
+          autoComplete="email"
           required
         />
-        <label className="text-sm font-semibold" htmlFor="message">
+        <label className="text-sm font-semibold" htmlFor="userMessage">
           Mensaje
         </label>
         <textarea
           name="userMessage"
-          id="message"
-          className="rounded-xl border border-white/10 bg-white/90 p-3 text-center text-primary-color-5"
+          id="userMessage"
+          className={fieldClass}
           rows="5"
           required
         />
         <input type="text" name="companyName" className="hidden" id="companyName" tabIndex={-1} autoComplete="off" />
         <button
           type="submit"
-          className="mt-2 rounded-xl bg-accent px-6 py-3 font-semibold text-primary-color-4 transition hover:scale-[1.02]"
+          disabled={sending}
+          className="mt-2 rounded-xl bg-accent px-6 py-3 font-semibold text-[#0c111a] transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-60"
         >
-          Enviar
+          {sending ? "Enviando…" : "Enviar"}
         </button>
       </form>
     </section>

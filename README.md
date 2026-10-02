@@ -1,29 +1,39 @@
-# 🌐 Portafolio Personal – Yassin-ce
+# Portafolio – Yassin Charrouf Errynda
 
-Este es mi portafolio personal desarrollado con **React**, donde presento mis proyectos, habilidades y experiencia como desarrollador web. El sitio es totalmente responsive y está diseñado para ofrecer una navegación clara, rápida y atractiva, ideal como carta de presentación profesional.
+Portfolio personal de **Junior SOC Analyst**. Incluye perfil, formación, experiencia, proyectos y contacto. Sitio de una sola página, responsive, desplegado en Vercel.
 
----
+**Demo:** [yassin-ce.vercel.app](https://yassin-ce.vercel.app)
 
-## 🔗 Demo en Vivo
+## Stack
 
-👉 [Ver Portfolio Online](https://yassin-ce.vercel.app)
+- [Next.js](https://nextjs.org/) 16 (App Router) y [React](https://react.dev/) 19
+- [Tailwind CSS](https://tailwindcss.com/) 4
+- [Framer Motion](https://www.framer.com/motion/) y Typewriter para el hero
+- [EmailJS](https://www.emailjs.com/) para el formulario de contacto
 
----
+## Contenido
 
-## 🧰 Tecnologías Usadas
+- Inicio, Sobre mí, habilidades (SOC, front, back, sistemas)
+- Experiencia y formación (especialización en ciberseguridad, bootcamp INNOVASUR, DAW, SMR)
+- Proyectos: MiFuturo y PassGen
+- Contacto
 
-- ⚛️ [React](https://reactjs.org/) – Librería principal para la UI
-- 🧼 CSS – Estilos personalizados
-- 🔀 React Router – Navegación entre páginas.
-- 📦 Vite – Para desarrollo local rápido
+Los textos se editan en `src/data/content.js`.
 
----
+## Desarrollo
 
-## ✨ Características
+```bash
+npm install
+npm run dev
+```
 
-- Diseño **moderno y responsive**
-- Secciones: `Inicio`, `Sobre mí`, `Proyectos`, `Habilidades`, `Contacto`
-- Animaciones suaves y diseño limpio
-- Componentes reutilizables y estructura modular
+Abre [http://localhost:3000](http://localhost:3000).
 
----
+```bash
+npm run build
+npm start
+```
+
+## Licencia
+
+Apache 2.0
