@@ -9,7 +9,7 @@ export default function Studies() {
   return (
     <section
       id="studies"
-      className="section-screen section-pad flex scroll-mt-24 flex-col items-center justify-center"
+      className="section-screen section-pad flex scroll-mt-24 flex-col items-center justify-center bg-[#070b12]"
     >
       <Reveal className="mb-8 w-full max-w-6xl md:mb-12">
         <p className="section-kicker mb-3">04 — Formación</p>

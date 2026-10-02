@@ -9,13 +9,7 @@ export function scrollToHash(hash) {
 
   const header = document.querySelector("header");
   const offset = header && header.offsetHeight ? header.offsetHeight : 88;
-  let top;
-
-  if (id === "contacMe") {
-    top = Math.max(el.getBoundingClientRect().bottom + getScrollY() - window.innerHeight, 0);
-  } else {
-    top = Math.max(el.getBoundingClientRect().top + getScrollY() - offset, 0);
-  }
+  const top = Math.max(el.getBoundingClientRect().top + getScrollY() - offset, 0);
 
   try {
     window.scrollTo({ top: top, behavior: "smooth" });

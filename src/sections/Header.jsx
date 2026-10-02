@@ -52,7 +52,7 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 z-50 w-full border-b border-white/10 bg-[#070b12]/80 pt-[env(safe-area-inset-top,0px)] backdrop-blur-md">
+    <header className="fixed top-0 z-50 w-full border-b border-white/10 bg-[#070b12] pt-[env(safe-area-inset-top,0px)]">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6 md:px-8">
         <a
           href="#inicio"

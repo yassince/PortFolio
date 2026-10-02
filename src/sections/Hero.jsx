@@ -14,7 +14,7 @@ export default function Hero() {
   return (
     <section
       id="inicio"
-      className="hero-screen relative z-0 flex flex-col items-center justify-center gap-3 px-4 pb-10 pt-24 sm:gap-5 sm:px-6"
+      className="hero-screen relative z-0 flex min-h-dvh flex-col items-center justify-center gap-3 px-4 pb-10 pt-24 sm:gap-5 sm:px-6"
     >
       <div className="absolute inset-0 bg-[url(/Hero.webp)] bg-cover bg-center bg-no-repeat" />
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/35 to-[#070b12]" />
