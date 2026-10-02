@@ -1,29 +1,28 @@
-import Image from "next/image"
+import Image from "next/image";
 
-export default function CardInfo({ title, children, ImageCard, tecnologias }) {
-    return (
-        <>
-            <section className="p-8 rounded-2xl max-w-96 lg:max-w-[800px] gap-12 flex flex-col items-center justify-between overflow-hidden bg-white/65 shadow-xl shadow-primary-color-3">
-                <div className="img min-h-80 flex items-center">
-                    <Image
-                        alt="Imagen de la card"
-                        src={ImageCard}
-                        width={500}
-                        height={150}
-                        className="rounded-2xl"
-                    />
-                </div>
-                <h1 className="text-xl md:text-4xl font-bold text-center text-primary-color-5">{title}</h1>
-                <p className="md:text-xl text-primary-color-4">{children}</p>
-                <section className={`
-                    ${!tecnologias ? 'hidden' : ''} 
-                    tecnologias grid grid-cols-2 md:grid-cols-3 p-4 lg:flex lg:flex-row gap-4`
-                }>
-                    {tecnologias?.map((item) => {
-                        return item
-                    })}
-                </section>
-            </section>
-        </>
-    )
+export default function CardInfo({ title, children, ImageCard, tecnologias, imageFit = "cover" }) {
+  return (
+    <article className="mx-auto flex h-full w-full flex-col items-center gap-6 overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 text-center shadow-[0_20px_50px_-28px_rgba(0,0,0,0.8)] transition duration-300 hover:border-accent/40">
+      {ImageCard ? (
+        <div className="flex aspect-[16/10] w-full items-center justify-center overflow-hidden rounded-xl bg-black/25">
+          <Image
+            alt={title || "Imagen del proyecto o experiencia"}
+            src={ImageCard}
+            width={640}
+            height={400}
+            className={`h-full w-full rounded-xl ${imageFit === "contain" ? "object-contain p-4" : "object-cover"}`}
+          />
+        </div>
+      ) : null}
+      <h3 className="text-xl font-bold text-white md:text-3xl">{title}</h3>
+      <p className="whitespace-pre-line text-sm leading-relaxed text-foreground/85 md:text-base">
+        {children}
+      </p>
+      {tecnologias?.length ? (
+        <div className="flex flex-wrap justify-center gap-2">
+          {tecnologias.map((item) => item)}
+        </div>
+      ) : null}
+    </article>
+  );
 }

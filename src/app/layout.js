@@ -1,5 +1,4 @@
 import { Geist, Geist_Mono } from "next/font/google";
-import Head from "next/head";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,28 +12,23 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Yassin C.E",
-  description: "Portfolio of Yassin Charrouf Errynda",
+  title: "Yassin Charrouf Errynda · Junior SOC Analyst",
+  description:
+    "Portfolio de Yassin Charrouf Errynda, analista SOC junior. Ciberseguridad, Blue Team, DAW y redes.",
+  metadataBase: new URL("https://yassin-ce.vercel.app"),
+  openGraph: {
+    title: "Yassin Charrouf Errynda · Junior SOC Analyst",
+    description:
+      "Ciberseguridad, Blue Team, análisis de incidentes y base en desarrollo web.",
+    url: "https://yassin-ce.vercel.app",
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <Head>
-        <title>Yassin C.E</title>
-        <meta name="description" content="Portfolio of Yassin Charrouf Errynda" />
-        <meta name="og:title" content="Yassin C.E" />
-        
-        <meta name="og:description" content="Portfolio of Yassin Charrouf Errynda" />
-        <meta name="og:type" content="website" />
-        <meta name="og:url" content="https://yassin-ce.vercel.app" />
-        <meta name="og:image" content="https://yassin-ce.vercel-app/og-image.png" />
-      </Head>
-      <body
-        className={`antialiased`}
-      >
-        {children}
-      </body>
+    <html lang="es" className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }

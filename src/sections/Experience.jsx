@@ -1,25 +1,33 @@
 import CardInfo from "@/components/CardInfo";
-import kyndryl from "../../public/kyndryl.webp"
-import regenerati from "../../public/pcregenerati.webp"
+import kyndryl from "../../public/kyndryl.webp";
+import regenerati from "../../public/pcregenerati.webp";
+import { experience } from "@/data/content";
 
-export default function Experience({}){
-    return(
-        <>
-            <section id="experience" className="min-h-screen flex flex-col justify-center items-center bg-primary-color-4">
-                <h1 className="text-6xl font-bold mt-32 lg:mt-0">Experiencia</h1>
-                <section className="work grid grid-cols-1 lg:grid-cols-2 gap-40 m-16">
-                    <CardInfo
-                        title={'Junior Equipo Industrialización'}
-                        ImageCard={kyndryl}
-                        children={'Formé parte de un equipo de industrialización en la que mi funcion erá la creación y prueba de artefactos mediante Ansible.\nLa prueba de los artefactos mediante AWX o en maquinas virtuales como Vagrant, VMware, Molecule, VirtualBox, etc.\nTambién creamos entronos de prueba con Kubernetes para la realización de pruebas básicas como deploy, gestion de pods, gestion de los mismos desde interfaz gráfica o desde linea de comandos, entre otras muchas más'}
-                    />
-                    <CardInfo
-                        title={'Tecnico repacación y mantenimiento de equipos informáticos'}
-                        ImageCard={regenerati}
-                        children={'En este puesto de encargaba del mantenimiento preventivo y correctivo de los equipos informaticos, tanto de parte de hardware con el software. Mis funciones erán mantenimiento de cada componenete del equipo informatico y después la instalación de SO y configuración del mismo.\nTambién me encarbada de la preparación física y lógica de los equipos.'}
-                    />
-                </section>
-            </section>
-        </>
-    )
+const IMAGES = {
+  kyndryl,
+  regenerati,
+};
+
+export default function Experience() {
+  return (
+    <section
+      id="experience"
+      className="flex min-h-screen scroll-mt-24 flex-col items-center justify-center bg-primary-color-4 px-6 py-24"
+    >
+      <p className="section-kicker mb-3">03 — Trayectoria</p>
+      <h2 className="mb-12 text-center text-4xl font-bold md:text-6xl">Experiencia</h2>
+      <div className="grid w-full max-w-6xl grid-cols-1 items-stretch justify-items-center gap-10 lg:grid-cols-2">
+        {experience.map((job) => (
+          <CardInfo
+            key={job.title}
+            title={job.title}
+            ImageCard={IMAGES[job.image]}
+            imageFit="contain"
+          >
+            {job.text}
+          </CardInfo>
+        ))}
+      </div>
+    </section>
+  );
 }

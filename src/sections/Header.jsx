@@ -1,120 +1,83 @@
-import Menu from "@/svg/Menu"
-import Link from "../components/Link"
-import { useState } from "react"
-import Close from "@/svg/Close"
-import { AnimatePresence, motion } from "framer-motion"
+import Menu from "@/svg/Menu";
+import Link from "../components/Link";
+import { useState } from "react";
+import Close from "@/svg/Close";
+import { AnimatePresence, motion } from "framer-motion";
 
-export default function Header({ }) {
-    const [open, setOpen] = useState(false)
-    const [animation, setAnimation] = useState('')
+const NAV = [
+  { href: "#inicio", label: "Inicio" },
+  { href: "#aboutMe", label: "Sobre mí" },
+  { href: "#experience", label: "Experiencia" },
+  { href: "#studies", label: "Formación" },
+  { href: "#proyects", label: "Proyectos" },
+  { href: "#contacMe", label: "Contacto" },
+];
 
-    const ChangeState = () => {
-        if (open) {
-            setAnimation('slide-out')
-            setTimeout(() => {
-                setOpen(false)
-            }, '300');
-        } else {
-            setAnimation('slide-in')
-            setOpen(true)
-        }
-    }
+export default function Header() {
+  const [open, setOpen] = useState(false);
 
-    return (
-        <>
-            <header className={`flex flex-row justify-around items-baseline w-full gap-4 md:gap-2 lg:gap-4 top-0 z-20 p-8 absolute transition-colors ease-in-out`}>
-                <div className="logo font-bold text-voodoo-50 text-4xl p-2 text-left lg:text-4xl">
-                    <a href="/">
-                        Yassin C.E
-                    </a>
-                </div>
-                <nav className="navigation hidden lg:flex text-xl flex-col w-auto items-center md:flex-row gap-4">
-                    <Link 
-                        href={'#inicio'}
-                        className={'rounded-2xl p-4 text-xl font-bold bg-primary-color-2 hover:bg-primary-color-3/15 transition-colors ease-in duration-300'}
-                    >Inicio</Link>
-                    <Link 
-                        href={'#aboutMe'}
-                        className={'rounded-2xl p-4 text-xl font-bold bg-primary-color-2 hover:bg-primary-color-3/15 transition-colors ease-in duration-300'}    
-                    >Sobre Mi</Link>
-                    <Link 
-                        href={'#experience'}
-                        className={'rounded-2xl p-4 text-xl font-bold bg-primary-color-2 hover:bg-primary-color-3/15 transition-colors ease-in duration-300'}    
-                    >Experiencia</Link>
-                    <Link 
-                        href={'#proyects'}
-                        className={'rounded-2xl p-4 text-xl font-bold bg-primary-color-2 hover:bg-primary-color-3/15 transition-colors ease-in duration-300'}
-                    >Proyectos</Link>
-                    <Link 
-                        href={'#contacMe'}
-                        className={'rounded-2xl p-4 text-xl font-bold bg-primary-color-2 hover:bg-primary-color-3/15 transition-colors ease-in duration-300'}    
-                    >Contactame</Link>
-                </nav>
-                <button onClick={ChangeState} className="transition-transform ease-in flex items-center justify-center">
-                    <AnimatePresence>
-                        {
-                            open ?
-                                (
-                                    <motion.div
-                                        key={'close'}
-                                        initial={{ opacity: 0, rotate: -90 }}
-                                        animate={{ opacity: 1, rotate: 0 }}
-                                        exit={{ opacity: 0, rotate: 90 }}
-                                        transition={{ duration: .3 }}
-                                        className="absolute top-10 right-8"
-                                    >
-                                        <Close
-                                            height={'50px'}
-                                            width={'50px'}
-                                            className={`lg:hidden`}
-                                            fill={'white'}
-                                        ></Close>
-                                    </motion.div>
-                                )
-                                :
-                                (
-                                    <motion.div
-                                        key={'menu'}
-                                        initial={{ opacity: 0, rotate: 90 }}
-                                        animate={{ opacity: 1, rotate: 0 }}
-                                        exit={{ opacity: 0, rotate: -90 }}
-                                        transition={{ duration: .5 }}
-                                        className="absolute top-10 right-8"
-                                    >
-                                        <Menu
-                                            height={'50px'}
-                                            width={'50px'}
-                                            fill={'white'}
-                                            className={'lg:hidden'}
-                                        ></Menu>
-                                    </motion.div>
-                                )
-                        }
-                    </AnimatePresence>
-                </button>
-                <nav className={`${open ? 'absolute' : 'hidden'} ${animation} z-20 top-30 p-6 w-full flex flex-col gap-6 lg:hidden min-h-32 items-center justify-center rounded-b-2xl bg-gradient-to-b from-5% to-45% from-transparent to-black`}>
-                    <Link 
-                        href={'#inicio'}
-                        className={'border-b-4 border-voodoo-200 text-2xl font-bold hover:scale-75 transition-transform ease-in duration-300'}
-                    >Inicio</Link>
-                    <Link 
-                        href={'#aboutMe'}
-                        className={'border-b-4 border-voodoo-200 text-2xl font-bold hover:scale-75 transition-transform ease-in duration-300'}    
-                    >Sobre Mi</Link>
-                    <Link 
-                        href={'#experience'}
-                        className={'border-b-4 border-voodoo-200 text-2xl font-bold hover:scale-75 transition-transform ease-in duration-300'}
-                    >Experiencia</Link>
-                    <Link 
-                        href={'#proyects'}
-                        className={'border-b-4 border-voodoo-200 text-2xl font-bold hover:scale-75 transition-transform ease-in duration-300'}    
-                    >Proyectos</Link>
-                    <Link 
-                        href={'#contacMe'}
-                        className={'border-b-4 border-voodoo-200 text-2xl font-bold hover:scale-75 transition-transform ease-in duration-300'}
-                    >Contactame</Link>
-                </nav>
-            </header>
-        </>
-    )
+  const close = () => setOpen(false);
+
+  return (
+    <header className="fixed top-0 z-20 flex w-full items-center justify-between gap-4 px-5 py-4 md:px-8">
+      <a href="/" className="text-2xl font-semibold tracking-tight text-white md:text-3xl">
+        Yassin C.E
+      </a>
+      <nav className="glass hidden items-center gap-1 rounded-full px-2 py-1 lg:flex">
+        {NAV.map((item) => (
+          <Link
+            key={item.href}
+            href={item.href}
+            className="rounded-full px-4 py-2 text-sm font-medium text-white/85 transition hover:bg-white/10 hover:text-white"
+          >
+            {item.label}
+          </Link>
+        ))}
+      </nav>
+      <button
+        type="button"
+        aria-label={open ? "Cerrar menú" : "Abrir menú"}
+        onClick={() => setOpen((value) => !value)}
+        className="relative z-30 flex h-12 w-12 items-center justify-center lg:hidden"
+      >
+        <AnimatePresence mode="wait">
+          {open ? (
+            <motion.div
+              key="close"
+              initial={{ opacity: 0, rotate: -90 }}
+              animate={{ opacity: 1, rotate: 0 }}
+              exit={{ opacity: 0, rotate: 90 }}
+              transition={{ duration: 0.2 }}
+            >
+              <Close height="32px" width="32px" fill="white" />
+            </motion.div>
+          ) : (
+            <motion.div
+              key="menu"
+              initial={{ opacity: 0, rotate: 90 }}
+              animate={{ opacity: 1, rotate: 0 }}
+              exit={{ opacity: 0, rotate: -90 }}
+              transition={{ duration: 0.2 }}
+            >
+              <Menu height="32px" width="32px" fill="white" />
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </button>
+      {open ? (
+        <nav className="glass absolute left-4 right-4 top-20 z-20 flex flex-col items-center gap-2 rounded-2xl p-5 lg:hidden">
+          {NAV.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              onClick={close}
+              className="w-full rounded-xl py-3 text-center text-lg font-medium hover:bg-white/10"
+            >
+              {item.label}
+            </Link>
+          ))}
+        </nav>
+      ) : null}
+    </header>
+  );
 }

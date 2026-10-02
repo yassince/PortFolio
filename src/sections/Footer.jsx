@@ -1,68 +1,34 @@
 import GitHub from "@/svg/socialNetwork/GitHub";
 import Linkedin from "@/svg/socialNetwork/Linkedin";
 import { Typewriter } from "react-simple-typewriter";
+import { profile } from "@/data/content";
 
-export default function Footer({ }) {
-    const mensajesDeAgradecimiento = [
-        "Gracias por visitar mi portafolio ✨",
-        "¡Gracias por llegar hasta aquí!",
-        "Hecho con ❤️ y mucho café",
-        "Gracias por tu tiempo 🙌",
-        "¡Nos vemos pronto! 👋",
-        "Tu visita significa mucho 😊",
-        "Gracias por echarle un vistazo a mi trabajo",
-        "¿Te gustó? ¡Hablemos!",
-        "Esto es solo el comienzo 🚀",
-        "Gracias por tu interés 🧠",
-        "¡Gracias por explorar mi mundo digital!",
-        "Tu atención ya es un regalo 🎁",
-        "Espero que hayas disfrutado el recorrido",
-        "¡Gracias por estar aquí!",
-        "Si leíste hasta el final, eres genial 😄",
-    ];
-    return (
-        <>
-            <footer className="footer bg-primary-pruple p-8 text-white flex gap-2.5 flex-col justify-between bg-gradient-to-r from-20% from-primary-color to-85% to-primary-color-4">
-                <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-                    <div className="text-right text-xl md:text-3xl lg:text-4xl font-bold">
-                        &copy; 2025 Yassin Charrouf Errynda
-                    </div>
-                    <div className="flex flex-row gap-4 justify-center items-center md:mr-10">
-                        <a
-                            href="https://github.com/yassince"
-                            target="_blank"
-                            rel="noreferrer"
-                        >
-                            <GitHub
-                                height={'50px'}
-                                width={'50px'}
-                                fill={'white'}
-                                className="hover:scale-110 transition-transform duration-300"
-                            />
-                        </a>
-                        <a
-                            href="https://www.linkedin.com/in/yassin-charrouf-errynda-73a208374"
-                            target="_blank"
-                            rel="noreferrer"
-                        >
-                            <Linkedin
-                                height={'50px'}
-                                width={'50px'}
-                                fill={'white'}
-                                className="hover:scale-110 transition-transform duration-300"
-                            />
-                        </a>
-                    </div>
-                </div>
-                <p className="text-center min-h-8 text-2xl">
-                    <Typewriter
-                        words={mensajesDeAgradecimiento}
-                        loop={true}
-                        delaySpeed={200}
-                    />
-                </p>
-            </footer>
+const THANKS = [
+  "Gracias por visitar mi portafolio",
+  "Hecho con café y Blue Team mindset",
+  "¿Hablamos de SOC, redes o desarrollo?",
+  "Tu visita ya suma",
+];
 
-        </>
-    )
+export default function Footer() {
+  return (
+    <footer className="flex flex-col gap-6 bg-gradient-to-r from-primary-color to-primary-color-4 px-8 py-10 text-white">
+      <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
+        <p className="text-lg font-semibold md:text-2xl">
+          &copy; {new Date().getFullYear()} {profile.fullName}
+        </p>
+        <div className="flex items-center gap-4">
+          <a href={profile.github} target="_blank" rel="noreferrer" aria-label="GitHub">
+            <GitHub height="40px" width="40px" fill="white" className="transition hover:scale-110" />
+          </a>
+          <a href={profile.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn">
+            <Linkedin height="40px" width="40px" fill="white" className="transition hover:scale-110" />
+          </a>
+        </div>
+      </div>
+      <p className="min-h-8 text-center text-lg text-white/80">
+        <Typewriter words={THANKS} loop delaySpeed={400} />
+      </p>
+    </footer>
+  );
 }

@@ -1,46 +1,65 @@
-import Profile from "../../public/Profile.webp"
+import Profile from "../../public/Profile.jpg";
 import Image from "next/image";
 import Link from "@/components/Link";
 import GitHub from "@/svg/socialNetwork/GitHub";
 import Linkedin from "@/svg/socialNetwork/Linkedin";
+import { aboutHighlights, aboutParagraphs, profile } from "@/data/content";
 
-export default function AboutMe({ }) {
-    return (
-        <>
-            <section id="aboutMe" className="min-h-screen p-4 flex flex-col gap-6 overflow-hidden justify-center items-center bg-gradient-to-b from-15% to-100% from-primary-color-3 to-primary-color-4">
-                <h1 className="text-4xl md:text-6xl min-h-16 lg:text-8xl font-bold mt-12 md:mt-0">
-                    Sobre Mi 👋
-                </h1>
-                <div className="info_me flex flex-col md:flex-row w-full md:justify-around items-center pb-6">
-                    <div className="presentation flex flex-col max-w-4xl min-w-32 w-full justify-between items-center gap-2 border-2 rounded-2xl shadow-2xl shadow-white p-6 m-6">
-                        <p className="text-3xl lg:text-3xl max-w-6xl lg:w-xl p-2 flex flex-col items-center justify-between gap-10">
-                            Soy un desarrollador web apasionado por crear soluciones innovadoras desde cero. Me destaco por ser una persona formal, motivada, puntual y con una gran capacidad de aprendizaje. Estoy en búsqueda de oportunidades profesionales donde pueda seguir creciendo y aportar valor con mi trabajo.
-                        </p>
-                        <div className="contact flex flex-col md:flex-row justify-center max-w-2xl gap-8 text-center">
-                            <Link
-                                href={'https://github.com/yassince'}
-                                className={'p-4 bg-primary-color-4 rounded-2xl text-2xl hover:scale-110 transition-transform duration-300 ease-in-out'}
-                            >
-                                <GitHub width={50} height={50} fill={'white'} />
-                            </Link>
-                            <Link
-                                className={'p-4 bg-primary-color-4 rounded-2xl text-2xl hover:scale-110 transition-transform duration-300 ease-in-out'}
-                                href={'https://es.linkedin.com/in/yassin-charrouf-errynda-73a208374'}
-                            >
-                                <Linkedin width={50} height={50} fill={'white'} />
-                            </Link>
-                        </div>
-                    </div>
-                    <div className="img_profile border-2 rounded-full overflow-hidden bg-gradient-to-b from-transparent to-black w-[200] lg:w-[400]">
-                        <Image
-                            src={Profile}
-                            alt="Profile image"
-                            height={400}
-                            width={400}
-                        />
-                    </div>
-                </div>
-            </section>
-        </>
-    )
+export default function AboutMe() {
+  return (
+    <section
+      id="aboutMe"
+      className="flex min-h-screen scroll-mt-24 flex-col items-center justify-center gap-12 overflow-hidden bg-gradient-to-b from-[#1a2330] to-[#070b12] px-6 py-24"
+    >
+      <div className="text-center">
+        <p className="section-kicker mb-3">01 — Perfil</p>
+        <h2 className="text-4xl font-bold md:text-6xl">Sobre mí</h2>
+      </div>
+      <div className="flex w-full max-w-6xl flex-col-reverse items-center gap-12 lg:flex-row lg:items-center lg:justify-between">
+        <div className="flex w-full max-w-2xl flex-col gap-6">
+          {aboutParagraphs.map((paragraph) => (
+            <p key={paragraph.slice(0, 24)} className="text-lg leading-relaxed text-foreground/90 md:text-[1.2rem]">
+              {paragraph}
+            </p>
+          ))}
+          <div className="flex flex-wrap gap-2 pt-1">
+            {aboutHighlights.map((item) => (
+              <span
+                key={item}
+                className="rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-sm font-medium text-accent"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
+          <div className="flex gap-3 pt-2">
+            <Link
+              href={profile.github}
+              className="rounded-2xl border border-white/10 bg-black/40 p-3 transition hover:scale-105 hover:border-accent/40 hover:bg-accent/15"
+            >
+              <GitHub width={36} height={36} fill="white" />
+            </Link>
+            <Link
+              href={profile.linkedin}
+              className="rounded-2xl border border-white/10 bg-black/40 p-3 transition hover:scale-105 hover:border-accent/40 hover:bg-accent/15"
+            >
+              <Linkedin width={36} height={36} fill="white" />
+            </Link>
+          </div>
+        </div>
+        <div className="relative h-[240px] w-[240px] shrink-0 lg:h-[380px] lg:w-[380px]">
+          <div className="absolute inset-4 rounded-full bg-accent/30 blur-3xl" />
+          <div className="relative h-full w-full overflow-hidden rounded-full">
+            <Image
+              src={Profile}
+              alt="Retrato de Yassin Charrouf Errynda"
+              fill
+              sizes="(min-width: 1024px) 380px, 240px"
+              className="object-cover object-[center_10%]"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }

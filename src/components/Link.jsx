@@ -1,7 +1,7 @@
-export default function Link({href, children, className}){
-    return(
-        <>
-            <a href={href} className={className}>{children}</a>
-        </>
-    )
+export default function Link({ href, children, className, onClick }) {
+  return (
+    <a href={href} className={className} onClick={onClick}>
+      {children}
+    </a>
+  );
 }
