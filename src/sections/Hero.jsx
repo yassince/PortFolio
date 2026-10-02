@@ -2,38 +2,65 @@
 
 import ArrowDown from "@/svg/ArrowDown";
 import ClientTypewriter from "@/components/ClientTypewriter";
+import { scrollToHash } from "@/lib/scrollToHash";
 import { heroTagline, heroWords, profile } from "@/data/content";
+import { motion, useReducedMotion } from "framer-motion";
+
+const ease = [0.22, 1, 0.36, 1];
 
 export default function Hero() {
+  const reduce = useReducedMotion();
+
   return (
     <section
       id="inicio"
-      className="fade-in relative z-0 flex min-h-screen flex-col items-center justify-center gap-6 bg-[url(/Hero.webp)] bg-cover bg-center bg-no-repeat px-4 pt-20"
+      className="hero-screen relative z-0 flex flex-col items-center justify-center gap-3 px-4 pb-10 pt-24 sm:gap-5 sm:px-6"
     >
+      <div className="absolute inset-0 bg-[url(/Hero.webp)] bg-cover bg-center bg-no-repeat" />
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/35 to-[#070b12]" />
-      <p className="relative section-kicker">{profile.role}</p>
-      <h1 className="relative min-h-16 text-center text-3xl font-semibold tracking-tight text-white drop-shadow-[0_2px_16px_rgba(0,0,0,0.85)] md:min-h-24 md:text-6xl lg:text-7xl">
+      <motion.p
+        className="relative section-kicker"
+        initial={reduce ? false : { opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease }}
+      >
+        {profile.role}
+      </motion.p>
+      <motion.h1
+        className="hero-title relative min-h-[2.6em] w-full max-w-[min(100%,40rem)] px-1 text-center text-white drop-shadow-[0_2px_16px_rgba(0,0,0,0.85)]"
+        initial={reduce ? false : { opacity: 0, y: 22 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease, delay: 0.08 }}
+      >
         <ClientTypewriter words={heroWords} delaySpeed={500} cursor />
-      </h1>
-      <p className="relative max-w-2xl text-center text-lg text-white/85 md:text-2xl">
+      </motion.h1>
+      <motion.p
+        className="relative max-w-xl px-1 text-center text-[0.95rem] leading-relaxed text-white/85 sm:text-lg md:max-w-2xl md:text-2xl"
+        initial={reduce ? false : { opacity: 0, y: 18 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.55, ease, delay: 0.16 }}
+      >
         {heroTagline}
-      </p>
-      <a
+      </motion.p>
+      <motion.a
         href="#aboutMe"
         onClick={(event) => {
           event.preventDefault();
-          document.getElementById("aboutMe")?.scrollIntoView({ behavior: "smooth", block: "start" });
+          scrollToHash("#aboutMe");
         }}
-        className="relative z-10 mt-4"
+        className="relative z-10 mt-3 inline-flex min-h-11 min-w-11 items-center justify-center sm:mt-4"
         aria-label="Ir a sobre mí"
+        initial={reduce ? false : { opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.28 }}
       >
         <ArrowDown
-          height="44px"
-          width="44px"
+          height="40px"
+          width="40px"
           fill="white"
-          className="animate-bounce transition hover:scale-110"
+          className="transition hover:scale-110"
         />
-      </a>
+      </motion.a>
     </section>
   );
 }

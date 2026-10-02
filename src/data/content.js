@@ -60,12 +60,12 @@ export const skillGroups = [
 export const experience = [
   {
     title: "Junior · Equipo de Industrialización",
-    image: "kyndryl",
+    company: "Kyndryl",
     text: "Participé en un equipo de industrialización creando y validando artefactos con Ansible. Las pruebas se ejecutaban en AWX y en entornos virtuales (Vagrant, VMware, Molecule, VirtualBox). También montamos entornos de prueba con Kubernetes para deploys, gestión de pods y operación desde interfaz y línea de comandos.",
   },
   {
     title: "Técnico de reparación y mantenimiento de equipos",
-    image: "regenerati",
+    company: "PC Regenerati",
     text: "Mantenimiento preventivo y correctivo de equipos, hardware y software: revisión de componentes, instalación y configuración de sistemas operativos, y preparación física y lógica de los equipos.",
   },
 ];

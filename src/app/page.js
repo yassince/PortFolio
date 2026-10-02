@@ -19,8 +19,13 @@ export default function Home() {
       <Experience/>
       <Studies/>
       <Proyects/>
-      <ContactMe/>
-      <Footer/>
+      <div id="contacMe" className="page-end contact-bg relative overflow-hidden">
+        <div className="contact-grid pointer-events-none absolute inset-0" />
+        <div className="contact-orb left-[12%] top-[16%] h-52 w-52 bg-accent/20" />
+        <div className="contact-orb bottom-[8%] right-[10%] h-64 w-64 bg-accent-2/20" style={{ animationDelay: "-6s" }} />
+        <ContactMe/>
+        <Footer/>
+      </div>
     </>
   )
 }

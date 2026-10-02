@@ -11,6 +11,13 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  viewportFit: "cover",
+};
+
 export const metadata = {
   title: "Yassin Charrouf Errynda · Junior SOC Analyst",
   description:
